@@ -1,27 +1,23 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [SB Admin](http://startbootstrap.com/template-overviews/sb-admin/)
+# Moodle Project
 
-[SB Admin](http://startbootstrap.com/template-overviews/sb-admin/) is an open source, admin dashboard template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+A project created as a project for the Federal Institute Of Sao Paulo, Campinas Campus.
 
-## Getting Started
+## Requirements
+1 -  [Maven](http://maven.apache.org/download.cgi)   
+2 - [Java 8 SDK](https://tecadmin.net/install-oracle-java-8-ubuntu-via-ppa/)   
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/sb-admin/)
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-sb-admin.git`
-* Fork the repo
 
-## Bugs and Issues
+## Running the Application
+### Compile 
+This will download dependencies, compile the applications and run tests if any   
+   
+###`mvn clean compile`   
+### Package   
+Package the application to a `.jar` file, located in the target directory.   
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-sb-admin/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/sb-admin/).
 
-## Creator
+###`mvn package`
+### Execute
+Using terminal navigate to the target directory and run the following command:    
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
-
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
-
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
-
-## Copyright and License
-
-Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-sb-admin/blob/gh-pages/LICENSE) license.
+###`java -jar moodle-project-1.0-SNAPSHOT-jar-with-dependencies.jar`
