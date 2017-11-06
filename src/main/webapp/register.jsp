@@ -108,7 +108,7 @@
           </form>
 
           <div class="text-center">
-            <a class="d-block small mt-3" href="login.html">Página inicial</a>
+            <a class="d-block small mt-3" href="login.jsp">Página inicial</a>
           </div>
         </div>
       </div>
