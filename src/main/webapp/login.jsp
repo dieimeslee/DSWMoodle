@@ -10,9 +10,10 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Ambiente Virtual de Aprendizagem</title>
-  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/sb-admin.css" rel="stylesheet">
-  <script src="js/jquery.min.js"></script>
+  <link href="css/plugins/morris.css" rel="stylesheet">
+  <link href="css/pages/login.css" rel="stylesheet">
 </head>
 
   <body class="bg-dark">
@@ -27,7 +28,7 @@
               <div class="form-row">
                 <div class="col-md-12">
                   <label for="name">Usuário</label>
-                  <input class="form-control" id="user" name="user" type="text" aria-describedby="nameHelp" placeholder="Insira seu nome">
+                  <input class="form-control" id="user" name="user" type="text" aria-describedby="nameHelp" placeholder="Insira seu nome" required>
                 </div>
               </div>
             </div>
@@ -36,7 +37,7 @@
               <div class="form-row">
                 <div class="col-md-12">
                   <label for="sobrenome">Senha</label>
-                  <input class="form-control" id="password" name="password" type="text" aria-describedby="nameHelp" placeholder="Insira seu sobrenome">
+                  <input class="form-control" type="password" id="password" name="password" aria-describedby="nameHelp" placeholder="Insira seu sobrenome" required>
                 </div>
               </div>
             </div>
@@ -50,10 +51,10 @@
         </div>
       </div>
     </div>
-    
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery-easing/jquery.easing.min.js"></script>
 
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="../js/login.js"></script>
   </body>
 
 </html>

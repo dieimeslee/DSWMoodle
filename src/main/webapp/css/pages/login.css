@@ -1,0 +1,13 @@
+.col-md-12 {
+    text-align: center;
+}
+
+.card-header {
+    text-align: center;
+    font-size: -webkit-xxx-large;
+    font-weight: bolder;
+}
+
+form {
+    display: grid;
+}
