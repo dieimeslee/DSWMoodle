@@ -6,7 +6,6 @@ A project created as a project for the Federal Institute Of Sao Paulo, Campinas 
 1 -  [Maven](http://maven.apache.org/download.cgi)   
 2 - [Java 8 SDK](https://tecadmin.net/install-oracle-java-8-ubuntu-via-ppa/)   
 3 - [Heroku](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
-
 ## Running the Application
 ### Compile 
 This will download dependencies, compile the applications and run tests if any   
