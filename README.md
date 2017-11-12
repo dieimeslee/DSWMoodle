@@ -1,5 +1,5 @@
 # Moodle Project
-
+[![wercker status](https://app.wercker.com/status/f137ba8fec964f8602b4b7312afe60c2/s/master "wercker status")](https://app.wercker.com/project/byKey/f137ba8fec964f8602b4b7312afe60c2)
 A project created as a project for the Federal Institute Of Sao Paulo, Campinas Campus.
 
 ## Requirements
