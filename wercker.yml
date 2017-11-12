@@ -35,9 +35,9 @@ build:
         name: Package
         code: |
             mvn package
-deploy-pr:
+deploy:
   steps:
     - heroku-deploy:
-            key: $HEROKU_KEY
-            user: $HEROKU_USER
-            app-name: $HEROKU_APP_NAME
+        key: $HEROKU_KEY
+        user: $HEROKU_USER
+        app-name: $HEROKU_APP_NAME
