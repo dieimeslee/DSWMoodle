@@ -4,17 +4,23 @@ A project created as a project for the Federal Institute Of Sao Paulo, Campinas 
 ## Requirements
 1 -  [Maven](http://maven.apache.org/download.cgi)   
 2 - [Java 8 SDK](https://tecadmin.net/install-oracle-java-8-ubuntu-via-ppa/)   
-3 - [Heroku](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
+3 - [Heroku](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)   
+### Other technologies used
+- [Feign](https://github.com/OpenFeign/feign)   
+- [JUnit5](http://junit.org/junit5/)   
 ## Running the Application
 ### Compile 
-This will download dependencies, compile the applications and run tests if any   
-   
+This will download dependencies and compile the application
 ### `mvn clean compile`   
+
+### Test 
+This will run all unit tests
+### `mvn test` 
+
 ### Package   
 Package the application to a `.jar` file, located in the target directory.   
-
-
 ### `mvn package`
+
 ### Execute
 Using terminal navigate to the target directory and run the following command:    
 ###`java -jar moodle-project-1.0-SNAPSHOT-jar-with-dependencies.jar`

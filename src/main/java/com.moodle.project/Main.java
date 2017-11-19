@@ -4,8 +4,8 @@ import org.apache.catalina.startup.Tomcat;
 import java.util.*;
 
 public class Main {
-    public static final Optional<String> port = Optional.ofNullable(System.getenv("PORT"));
-    public static final Optional<String> env = Optional.ofNullable(System.getenv("ENV"));
+    private static final Optional<String> port = Optional.ofNullable(System.getenv("PORT"));
+    private static final Optional<String> env = Optional.ofNullable(System.getenv("ENV"));
     public static void main(String[] args) throws Exception {
         String _port = port.orElse("8080"), contextPath = "/", appBase = ".";
         Tomcat tomcat = new Tomcat();

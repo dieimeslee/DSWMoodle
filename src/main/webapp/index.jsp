@@ -5,5 +5,9 @@
     </script>
 </head>
 <body>
+<%!
+    public String authToken = "";
+%>
+<jsp:forward page="login.jsp"/>
 </body>
 </html>
