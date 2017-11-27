@@ -22,9 +22,11 @@ Package the application to a `.jar` file, located in the target directory.
 ### `mvn package`
 
 ### Execute
+OBS: Do not try to run the main class directly, it will **NOT** work
+#### Run local instance through jar directly
 Using terminal navigate to the target directory and run the following command:    
-###`java -jar moodle-project-1.0-SNAPSHOT-jar-with-dependencies.jar`
+#### `java -jar moodle-project-1.0-SNAPSHOT-jar-with-dependencies.jar`
 
-## Run local instance
+#### Run local instance through Heroku
 To run a local instance of the package type the following in your terminal
-### `heroku local web`
+#### `heroku local web`
