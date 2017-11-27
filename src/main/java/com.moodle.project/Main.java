@@ -14,6 +14,11 @@ public class Main {
         tomcat.getHost().setAppBase(appBase);
         tomcat.addWebapp(contextPath, appBase);
         tomcat.start();
-        tomcat.getServer().await();
+        if (env.equals("test") || env.equals("production")) {
+            tomcat.getServer();
+            tomcat.stop();
+        } else {
+            tomcat.getServer().await();
+        }
     }
 }

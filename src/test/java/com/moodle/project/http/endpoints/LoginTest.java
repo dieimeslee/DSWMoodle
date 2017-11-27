@@ -1,6 +1,5 @@
-package test;
+package com.moodle.project.http.endpoints;
 
-import com.moodle.project.http.endpoints.Login;
 import feign.FeignException;
 import org.junit.jupiter.api.Test;
 
