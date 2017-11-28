@@ -9,14 +9,15 @@ public class Main {
     public static void main(String[] args) throws Exception {
         String _port = port.orElse("8080"), contextPath = "/", appBase = ".";
         Tomcat tomcat = new Tomcat();
-        if (!env.equals("production"))
+        if (!env.toString().contains("production"))
             tomcat.setPort(Integer.valueOf(_port));
         tomcat.getHost().setAppBase(appBase);
         tomcat.addWebapp(contextPath, appBase);
         tomcat.start();
-        if (env.equals("test") || env.equals("production")) {
+        if (env.toString().contains("test") || env.toString().contains("production")) {
             tomcat.getServer();
             tomcat.stop();
+            System.out.println("Ok");
         } else {
             tomcat.getServer().await();
         }

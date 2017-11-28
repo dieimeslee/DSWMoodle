@@ -11,7 +11,7 @@ build:
     - script:
         name: Test
         code: |
-            mvn test
+            export ENV=test && mvn test
     - script:
         name: Package
         code: |

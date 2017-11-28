@@ -15,7 +15,7 @@ This will download dependencies and compile the application
 
 ### Test 
 This will run all unit tests
-### `mvn test` 
+### `export ENV=test && mvn test` 
 
 ### Package   
 Package the application to a `.jar` file, located in the target directory.   

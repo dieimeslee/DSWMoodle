@@ -150,8 +150,7 @@
     <finalName>moodle-project</finalName>
     <resources>
       <resource>
-        <directory>src/main/webapp</directory>
-        <targetPath>META-INF/resources</targetPath>
+        <directory>src/main/webapp/META-INF/resources</directory>
       </resource>
     </resources>
     <testSourceDirectory>src/test/java</testSourceDirectory>
