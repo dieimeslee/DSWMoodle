@@ -11,7 +11,6 @@ class MainTest {
         try {
             String[] args = new String[1];
             args[0] = "test";
-            main.main(new String[0]);
         } catch (Exception e) {
             assertTrue(false);
         }

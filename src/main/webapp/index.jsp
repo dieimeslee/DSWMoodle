@@ -1,13 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
-    <script type="text/javascript">
-        window.location.href = '/login.jsp';
-    </script>
 </head>
 <body>
-<%!
-    public String authToken = "";
-%>
-<jsp:forward page="login.jsp"/>
+${variable}
 </body>
 </html>
