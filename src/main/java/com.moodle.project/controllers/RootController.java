@@ -7,18 +7,18 @@ import javax.inject.Inject;
 import org.apache.log4j.Logger;
 
 @Controller
-public class IndexController {
+public class RootController {
 
-  final static Logger logger = Logger.getLogger(IndexController.class);
+  final static Logger logger = Logger.getLogger(RootController.class);
 
   private final Result result;
 
-  protected IndexController() {
+  protected RootController() {
     this(null);
   }
 
   @Inject
-  public IndexController(Result result) {
+  public RootController(Result result) {
     this.result = result;
   }
 
