@@ -67,7 +67,7 @@ fabric.properties
 .idea/
 
 # Tomcat
-tomcat.8080/
+tomcat.*/
 
 ### Java ###
 # Compiled class file
