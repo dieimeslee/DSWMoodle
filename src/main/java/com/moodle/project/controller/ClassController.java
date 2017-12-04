@@ -59,17 +59,13 @@ public class ClassController {
     } else {
       message = "Turma não pode ser criada, tente outro nome";
     }
-    result.redirectTo(ClassController.class).index();
     result.include("message", message);
+    result.redirectTo(ClassController.class).index();
   }
 
   private void resultDefaults() {
     result.include("pageTitle", "Classes");
     result.include("siteName", "Moodle");
-    if (message == null)
-      result.include("message", "");
-    else
-        message = null;
   }
 
 }
