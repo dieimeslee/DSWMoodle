@@ -2,7 +2,7 @@
 <jsp:include page="/WEB-INF/jsp/header.jsp"></jsp:include>
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Welcome ${userName}!</a>
+    <a class="navbar-brand" href="index.html">Bem-Vindo ${userName}!</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -14,64 +14,113 @@
                     <span class="nav-link-text">Dashboard</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Admin">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Administrador">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-wrench"></i>
-                    <span class="nav-link-text">Admin</span>
+                    <span class="nav-link-text">Administrador</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href="navbar.html">Create User</a>
+                        <a href="#">
+                            <i class="fa fa-user-plus"></i>
+                            <span class="nav-link-text">Criar Usuário</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="cards.html">Create Class</a>
+                        <a href="#">
+                            <i class="fa fa-object-group"></i>
+                            <span class="nav-link-text">Criar Turma</span>
+                        </a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Professor">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-file"></i>
+                    <i class="fa fa-graduation-cap"></i>
                     <span class="nav-link-text">Professor</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                     <li>
-                        <a href="login.html">Administrate Classes</a>
+                    <a href="register.html">
+                        <i class="fa fa-users"></i>
+                        <span class="nav-link-text">Gerenciar Turmas</span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="register.html">
+                            <i class="fa fa-fw fa-file"></i>
+                            <span class="nav-link-text">Adicionar Arquivo</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="register.html">Add File</a>
-                    </li>
-                    <li>
-                        <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
+                        <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">
+                            <i class="fa fa-book"></i>
+                            <span class="nav-link-text">
+                                Tarefas
+                            </span>
+                        </a>
                         <ul class="sidenav-third-level collapse" id="collapseMulti2">
                             <li>
-                                <a href="#">Create Homework</a>
+                                <a href="#">
+                                    <i class="fa fa-plus"></i>
+                                    <span class="nav-link-text">
+                                        Criar Tarefa
+                                    </span>
+                                </a>
                             </li>
                             <li>
-                                <a href="#">Grade Homework</a>
+                                <a href="#">
+                                    <i class="fa fa-pencil"></i>
+                                    <span class="nav-link-text">
+                                        Avaliar Tarefa
+                                    </span>
+                                </a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="blank.html">Send e-mail</a>
+                        <a href="#">
+                            <i class="fa fa-paper-plane-o"></i>
+                            <span class="nav-link-text">
+                                Enviar E-mail
+                            </span>
+                        </a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-sitemap"></i>
-                    <span class="nav-link-text">Student</span>
+                    <i class="fa fa-university"></i>
+                    <span class="nav-link-text">Aluno</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseMulti">
                     <li>
-                        <a href="#">Add Homework</a>
+                        <a href="#collapseMulti">
+                            <i class="fa fa-tasks"></i>
+                            <span class="nav-link-text">Tarefas</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="#">Grades</a>
-                    </li>
-                    <li>
-                        <a href="#">Add to Reminder</a>
+                        <a href="#collapseMulti">
+                            <i class="fa fa-star-o"></i>
+                            <span class="nav-link-text">Notas</span>
+                        </a>
                     </li>
                 </ul>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Configurações">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseConfig" data-parent="#exampleAccordion">
+                    <i class="fa fa-wrench"></i>
+                    <span class="nav-link-text">Configurações</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseConfig">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-calendar-plus-o"></i>
+                            <span class="nav-link-text">Lembrete de Entrega</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">
@@ -127,7 +176,7 @@
             </span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="alertsDropdown">
-                    <h6 class="dropdown-header">New Alerts:</h6>
+                    <h6 class="dropdown-header">${alerts} Novos Lembretes:</h6>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">
               <span class="text-success">
@@ -160,20 +209,8 @@
                 </div>
             </li>
             <li class="nav-item">
-                <form class="form-inline my-2 my-lg-0 mr-lg-2">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Search for...">
-                        <span class="input-group-btn">
-                <button class="btn btn-primary" type="button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </span>
-                    </div>
-                </form>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-                    <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+                    <i class="fa fa-fw fa-sign-out"></i>Sair</a>
             </li>
         </ul>
     </div>
@@ -183,70 +220,22 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="#">Dashboard</a>
+                <a href="#">Painel Inicial</a>
             </li>
-            <li class="breadcrumb-item active">My Dashboard</li>
+            <li class="breadcrumb-item active">Painel Inicial</li>
         </ol>
         <!-- Icon Cards-->
         <div class="row">
-            <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="card text-white bg-primary o-hidden h-100">
-                    <div class="card-body">
-                        <div class="card-body-icon">
-                            <i class="fa fa-fw fa-comments"></i>
-                        </div>
-                        <div class="mr-5">26 New Messages!</div>
-                    </div>
-                    <a class="card-footer text-white clearfix small z-1" href="#">
-                        <span class="float-left">View Details</span>
-                        <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-                    </a>
-                </div>
-            </div>
             <div class="col-xl-3 col-sm-6 mb-3">
                 <div class="card text-white bg-warning o-hidden h-100">
                     <div class="card-body">
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-list"></i>
                         </div>
-                        <div class="mr-5">11 New Tasks!</div>
+                        <div class="mr-5">${tasks} Novas Tarefas!</div>
                     </div>
                     <a class="card-footer text-white clearfix small z-1" href="#">
-                        <span class="float-left">View Details</span>
-                        <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="card text-white bg-success o-hidden h-100">
-                    <div class="card-body">
-                        <div class="card-body-icon">
-                            <i class="fa fa-fw fa-shopping-cart"></i>
-                        </div>
-                        <div class="mr-5">123 New Orders!</div>
-                    </div>
-                    <a class="card-footer text-white clearfix small z-1" href="#">
-                        <span class="float-left">View Details</span>
-                        <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="card text-white bg-danger o-hidden h-100">
-                    <div class="card-body">
-                        <div class="card-body-icon">
-                            <i class="fa fa-fw fa-support"></i>
-                        </div>
-                        <div class="mr-5">13 New Tickets!</div>
-                    </div>
-                    <a class="card-footer text-white clearfix small z-1" href="#">
-                        <span class="float-left">View Details</span>
+                        <span class="float-left">Ver Detalhes</span>
                         <span class="float-right">
                 <i class="fa fa-angle-right"></i>
               </span>
