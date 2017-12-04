@@ -31,6 +31,11 @@ public interface IUser {
                 @Param("status") String status,
                 String requestBody);
 
+  @RequestLine("GET /reminder?user={user}")
+  @Headers("Content-Length: 0")
+  String getReminder(@Param("user") String user,
+                     String requestBody);
+
   @RequestLine("PUT /user?user={user}")
   @Headers("Content-Length: 0")
   String update(@Param("user") String user);
