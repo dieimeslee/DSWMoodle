@@ -61,6 +61,13 @@ public interface UserDao {
    */
   void update(User user);
 
+
+  /**
+   * Recover password.
+   */
+  Boolean recover(String user, String password, String email);
+
+
   /**
    * Retrieves all users from database.
    */

@@ -14,4 +14,8 @@
       </New>
     </Arg>
   </New>
+  <Call name="setAttribute">
+    <Arg>org.eclipse.jetty.server.Request.maxFormContentSize</Arg>
+    <Arg>200000</Arg>
+  </Call>
 </Configure>

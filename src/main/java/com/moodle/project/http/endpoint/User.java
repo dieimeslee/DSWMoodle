@@ -27,6 +27,10 @@ public class User implements Client {
     return client.create(user, password, email, firstName, lastName, userType);
   }
 
+  public Boolean put(String user, String password, String email) {
+    return !client.recover(user, password, email).contains("ERROR");
+  }
+
   public String put(String user) {
     return client.update(user);
   }

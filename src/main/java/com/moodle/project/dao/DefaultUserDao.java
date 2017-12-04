@@ -23,6 +23,7 @@ import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 import com.moodle.project.http.endpoint.Login;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 
 /**
  * Default implementation for UserDao
@@ -84,6 +85,11 @@ public class DefaultUserDao implements UserDao {
 	@Override
 	public void add(User user) {
 		new com.moodle.project.http.endpoint.User().post(user.getLogin(), user.getPassword(), user.getEmail(), user.getFirstName(), user.getLastName(), user.getUserType());
+	}
+
+	@Override
+	public Boolean recover(String user, String password, String email) {
+		return new com.moodle.project.http.endpoint.User().put(user, password, email);
 	}
 
 	@Override

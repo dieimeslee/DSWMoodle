@@ -6,12 +6,12 @@
         <div class="card-body">
 
             <form action="${linkTo[RootController].login}" method="post">
-
+                <p>${message}</p>
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-12">
-                            <label for="name">Usuário</label>
-                            <input class="form-control" id="user" name="login" type="text" aria-describedby="nameHelp" placeholder="Insira seu nome" required>
+                            <label for="user">Usuário</label>
+                            <input class="form-control" id="user" name="login" type="text" aria-describedby="nameHelp" placeholder="Insira seu usuário" required>
                         </div>
                     </div>
                 </div>
@@ -19,8 +19,8 @@
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-12">
-                            <label for="sobrenome">Senha</label>
-                            <input class="form-control" type="password" id="password" name="password" aria-describedby="nameHelp" placeholder="Insira seu sobrenome" required>
+                            <label for="password">Senha</label>
+                            <input class="form-control" type="password" id="password" name="password" aria-describedby="nameHelp" placeholder="Insira sua senha" required>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
             </form>
 
             <div class="text-center">
-                <a class="d-block small mt-3" href="register.jsp">Criar Usuário</a>
+                <a class="d-block small mt-3" href="${linkTo[RootController].recover}">Recuperar Senha</a>
             </div>
         </div>
     </div>

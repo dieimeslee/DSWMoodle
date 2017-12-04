@@ -56,7 +56,8 @@ public class UsersController {
    * Shows user's home page containing his Music collection.
    */
   @Get
-  public void home() {  }
+  @Public
+  public void index() {  }
 
   /**
    * Accepts HTTP GET requests.

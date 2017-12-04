@@ -5,6 +5,8 @@ import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import javax.inject.Inject;
+
+import com.moodle.project.dao.DefaultUserDao;
 import com.moodle.project.dao.UserDao;
 import com.moodle.project.interceptor.Public;
 import com.moodle.project.interceptor.UserInfo;
@@ -15,11 +17,11 @@ import org.apache.log4j.Logger;
 public class RootController {
 
   final static Logger logger = Logger.getLogger(RootController.class);
-
+  private String message;
   private final Result result;
 //  private final Validator validator;
   private final UserInfo userInfo;
-  private final UserDao dao;
+  private final DefaultUserDao dao;
 
   /**
    * @deprecated CDI eyes only
@@ -29,7 +31,7 @@ public class RootController {
   }
 
   @Inject
-  public RootController(UserDao dao, UserInfo userInfo, Result result) {
+  public RootController(DefaultUserDao dao, UserInfo userInfo, Result result) {
     this.dao = dao;
     this.result = result;
     this.userInfo = userInfo;
@@ -54,7 +56,25 @@ public class RootController {
 
     // we don't want to go to default page (/WEB-INF/jsp/home/login.jsp)
     // we want to redirect to the user's home
-    result.redirectTo(UsersController.class).home();
+    result.redirectTo(UsersController.class).index();
+  }
+
+  @Get("/recover")
+  @Public
+  public void recover() {
+  }
+
+  @Post("/recover")
+  @Public
+  public void recover(String user, String newPassword, String email) {
+    if(dao.recover(user, newPassword, email)) {
+      message = "user password changed with success";
+      result.redirectTo(RootController.class).index();
+    } else {
+      message = "Invalid info try again!";
+      result.redirectTo(RootController.class).recover();
+
+    }
   }
 
   @Get("/")
