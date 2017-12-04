@@ -7,6 +7,7 @@ import com.moodle.project.interceptor.Public;
 import com.moodle.project.interceptor.UserInfo;
 import com.moodle.project.model.User;
 import com.moodle.project.validation.LoginAvailable;
+import jdk.jfr.events.ExceptionThrownEvent;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
@@ -81,13 +82,18 @@ public class UsersController {
   @Post
   public void createTask(String name, String downloadLink, String description, String _class, String date, String time) {
     resultDefaults();
-    com.moodle.project.http.endpoint.User user = new com.moodle.project.http.endpoint.User();
     try {
-      if (user.createTask(name, downloadLink, description, _class, date, time))
-        result.include("Message", "Tarefa adicionada com sucesso");
-      else
+      com.moodle.project.http.endpoint.User user = new com.moodle.project.http.endpoint.User();
+      try {
+        if (user.createTask(name, downloadLink, description, _class, date, time))
+          result.include("Message", "Tarefa adicionada com sucesso");
+        else
+          result.include("Message", "Tarefa não foi adicionada com sucesso");
+      } catch (Exception e) {
         result.include("Message", "Tarefa não foi adicionada com sucesso");
-    } catch (Exception e) {
+      }
+    }
+    catch (Exception e) {
       result.include("Message", "Tarefa não foi adicionada com sucesso");
     }
     result.redirectTo(UsersController.class).task();
