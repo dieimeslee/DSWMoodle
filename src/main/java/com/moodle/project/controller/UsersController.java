@@ -51,7 +51,7 @@ public class UsersController {
    * Accepts HTTP GET requests.
    *
    * URL:  /home
-   * View: /WEB-INF/jsp/user/index.jsp
+   * View: /WEB-INF/jsp/users/index.jsp
    *
    * Shows user's home page containing his Music collection.
    */
@@ -94,14 +94,17 @@ public class UsersController {
   @Path("/users")
   @Post
   @Public
-  public void add(@LoginAvailable User user) {
+  public void add(String username, String password, String email, String firstName, String lastName, String userType) {
     resultDefaults();
-//    validator.onErrorUsePageOf(RootController.class).login(userInfo.getUser().getLogin(), userInfo.getUser().getPassword());
-
+    User user = new User();
+    user.setLogin(username);
+    user.setPassword(password);
+    user.setEmail(email);
+    user.setFirstName(firstName);
+    user.setLastName(lastName);
+    user.setUserType(userType);
     userDao.add(user);
 
-    // you can add objects to result even in redirects. Added objects will
-    // survive one more request when redirecting.
     result.include("notice", "User " + user.getFirstName() + " successfully added");
     result.redirectTo(RootController.class).login(UserInfo.getUser().getLogin(), UserInfo.getUser().getPassword());
   }

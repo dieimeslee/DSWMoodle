@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="${linkTo[UsersController].index}">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Dashboard</span>
                 </a>
@@ -27,7 +27,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="${linkTo[ClassController].index}">
                             <i class="fa fa-object-group"></i>
                             <span class="nav-link-text">Criar Turma</span>
                         </a>
@@ -1027,7 +1027,7 @@
     <footer class="sticky-footer">
         <div class="container">
             <div class="text-center">
-                <small>Copyright © Your Website 2017</small>
+                <small>Copyright © Moodle 2017</small>
             </div>
         </div>
     </footer>
