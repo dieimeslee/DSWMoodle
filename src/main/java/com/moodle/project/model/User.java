@@ -32,6 +32,18 @@ public class User implements Serializable {
 
   private static final long serialVersionUID = 4548298563023480676L;
 
+  public User() {
+  }
+
+  public User(String login, String password, String firstName, String lastName, String email, String userType) {
+    this.login = login;
+    this.password = password;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.userType = userType;
+  }
+
   @NotNull
   @Pattern(regexp = "[a-z0-9_]+", message = "{invalid_login}")
   private String login;
