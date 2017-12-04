@@ -105,23 +105,4 @@ public class RootController{
     result.include("siteName", "Moodle");
   }
 
-  @Get("/register")
-  @Public
-  public void register() {
-    resultDefaults();
-  }
-
-  @Post("/register")
-  @Public
-  public void register(String firstName, String lastName, String userType, String email, String user, String password) {
-    if(dao.add(new User(user, password, firstName, lastName, email, userType))) {
-      setMessage("User's created with success :-)");
-      result.redirectTo(RootController.class).index();
-    } else {
-      setMessage("Invalid info try again!");
-      result.redirectTo(RootController.class).register();
-    }
-
-  }
-
 }

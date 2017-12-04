@@ -21,7 +21,7 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href="#">
+                        <a href="${linkTo[UserController].index}">
                             <i class="fa fa-user-plus"></i>
                             <span class="nav-link-text">Criar Usuário</span>
                         </a>

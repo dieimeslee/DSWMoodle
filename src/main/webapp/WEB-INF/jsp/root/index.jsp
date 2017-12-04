@@ -29,7 +29,6 @@
             </form>
 
             <div class="text-center">
-                <a class="d-block small mt-3" href="${linkTo[RootController].register}">Criar usuário</a>
                 <a class="d-block small mt-3" href="${linkTo[RootController].recover}">Recuperar Senha</a>
             </div>
         </div>
