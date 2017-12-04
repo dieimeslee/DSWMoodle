@@ -86,15 +86,15 @@ public class UsersController {
       com.moodle.project.http.endpoint.User user = new com.moodle.project.http.endpoint.User();
       try {
         if (user.createTask(name, downloadLink, description, _class, date, time))
-          result.include("Message", "Tarefa adicionada com sucesso");
+          result.include("message", "Tarefa adicionada com sucesso");
         else
-          result.include("Message", "Tarefa não foi adicionada com sucesso");
+          result.include("message", "Tarefa não foi adicionada com sucesso");
       } catch (Exception e) {
-        result.include("Message", "Tarefa não foi adicionada com sucesso");
+        result.include("message", "Tarefa não foi adicionada com sucesso");
       }
     }
     catch (Exception e) {
-      result.include("Message", "Tarefa não foi adicionada com sucesso");
+      result.include("message", "Tarefa não foi adicionada com sucesso");
     }
     result.redirectTo(UsersController.class).task();
   }
@@ -110,11 +110,11 @@ public class UsersController {
     com.moodle.project.http.endpoint.User user = new com.moodle.project.http.endpoint.User();
     try {
       if (user.setReminder(status))
-        result.include("Message", "Lembrete configurado com sucesso");
+        result.include("message", "Lembrete configurado com sucesso");
       else
-        result.include("Message", "Lembrete não foi configurado com sucesso");
+        result.include("message", "Lembrete não foi configurado com sucesso");
     } catch (Exception e) {
-      result.include("Message", "Lembrete não foi configurado com sucesso");
+      result.include("message", "Lembrete não foi configurado com sucesso");
     }
     result.redirectTo(UsersController.class).reminder();
   }
