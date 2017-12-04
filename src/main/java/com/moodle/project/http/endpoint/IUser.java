@@ -25,6 +25,12 @@ public interface IUser {
                 @Param("date") String date,
                 String requestBody);
 
+  @RequestLine("POST /reminder?user={user}&status={status}")
+  @Headers("Content-Length: 0")
+  String setReminder(@Param("user") String user,
+                @Param("status") String status,
+                String requestBody);
+
   @RequestLine("PUT /user?user={user}")
   @Headers("Content-Length: 0")
   String update(@Param("user") String user);

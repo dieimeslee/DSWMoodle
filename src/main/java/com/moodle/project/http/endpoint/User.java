@@ -1,6 +1,7 @@
 package com.moodle.project.http.endpoint;
 
 import com.moodle.project.http.Client;
+import com.moodle.project.interceptor.UserInfo;
 import com.netflix.config.ConfigurationManager;
 import feign.Feign;
 import feign.form.FormEncoder;
@@ -35,13 +36,22 @@ public class User implements Client {
     }
   }
 
-  public Boolean createTask(String name, String downloadLink, String description, String _class, String date) {
+  public Boolean createTask(String name, String downloadLink, String description, String _class, String date, String time) {
     try {
-      return !client.task(name, downloadLink, description, _class, date, "{\"avoiding\": \"Error 411\"}").contains("ERROR");
+      return !client.task(name, downloadLink, description, _class, date + " " + time, "{\"avoiding\": \"Error 411\"}").contains("ERROR");
     } catch (Exception e){
       return false;
     }
   }
+
+  public Boolean setReminder(String status) {
+    try {
+      return !client.setReminder(UserInfo.getUser().getLogin() , status, "{\"avoiding\": \"Error 411\"}").contains("ERROR");
+    } catch (Exception e){
+      return false;
+    }
+  }
+
   public String put(String user) {
     return client.update(user);
   }

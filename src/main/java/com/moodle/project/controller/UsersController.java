@@ -79,11 +79,11 @@ public class UsersController {
   }
 
   @Post
-  public void createTask(String name, String downloadLink, String description, String _class, String date) {
+  public void createTask(String name, String downloadLink, String description, String _class, String date, String time) {
     resultDefaults();
     com.moodle.project.http.endpoint.User user = new com.moodle.project.http.endpoint.User();
     try {
-      if (user.createTask(name, downloadLink, description, _class, date))
+      if (user.createTask(name, downloadLink, description, _class, date, time))
         result.include("Message", "Tarefa adicionada com sucesso");
       else
         result.include("Message", "Tarefa não foi adicionada com sucesso");
@@ -92,6 +92,24 @@ public class UsersController {
     }
   }
 
+  @Get
+  public void reminder() {
+    resultDefaults();
+  }
+
+  @Post
+  public void setReminder(String status) {
+    resultDefaults();
+    com.moodle.project.http.endpoint.User user = new com.moodle.project.http.endpoint.User();
+    try {
+      if (user.setReminder(status))
+        result.include("Message", "Lembrete configurado com sucesso");
+      else
+        result.include("Message", "Lembrete não foi configurado com sucesso");
+    } catch (Exception e) {
+      result.include("Message", "Lembrete não foi configurado com sucesso");
+    }
+  }
   /**
    * Accepts HTTP POST requests.
    *

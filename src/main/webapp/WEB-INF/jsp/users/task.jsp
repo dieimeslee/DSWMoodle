@@ -41,6 +41,10 @@
                                 <label for="date">Data</label>
                                 <input class="form-control" id="date" type="date" name="date" placeholder="Insira a data da entrega" required>
                             </div>
+                            <div class="col-md-6">
+                                <label for="time">Hora</label>
+                                <input class="form-control" id="time" type="text" pattern="([01]?[0-9]|2[0-3])):([01]?[0-9]|2[0-3])):[0-5][0-9]" name="time" placeholder="Insira a hora da entrega HH:MM:SS" required>
+                            </div>
                         </div>
                         <div id="divPasswords"></div>
                     </div>
@@ -85,4 +89,7 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+  $("#time").setMask({mask: "time", defaultValue:"hh:mm:ss"});
+</script>
 <jsp:include page="/WEB-INF/jsp/footer.jsp"></jsp:include>

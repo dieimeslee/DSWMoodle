@@ -45,12 +45,6 @@
                         </a>
                     </li>
                     <li>
-                        <a href="register.html">
-                            <i class="fa fa-fw fa-file"></i>
-                            <span class="nav-link-text">Adicionar Arquivo</span>
-                        </a>
-                    </li>
-                    <li>
                         <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">
                             <i class="fa fa-book"></i>
                             <span class="nav-link-text">
@@ -112,7 +106,7 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseConfig">
                     <li>
-                        <a href="#">
+                        <a href="${linkTo[UsersController].reminder}">
                             <i class="fa fa-calendar-plus-o"></i>
                             <span class="nav-link-text">Lembrete de Entrega</span>
                         </a>
