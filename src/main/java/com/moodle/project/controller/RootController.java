@@ -114,7 +114,14 @@ public class RootController{
   @Post("/register")
   @Public
   public void register(String firstName, String lastName, String userType, String email, String user, String password) {
-    dao.add(new User(user, password, firstName, lastName, email, userType));
+    if(dao.add(new User(user, password, firstName, lastName, email, userType))) {
+      setMessage("User's created with success :-)");
+      result.redirectTo(RootController.class).index();
+    } else {
+      setMessage("Invalid info try again!");
+      result.redirectTo(RootController.class).register();
+    }
+
   }
 
 }
