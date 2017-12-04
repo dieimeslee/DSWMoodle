@@ -105,4 +105,16 @@ public class RootController{
     result.include("siteName", "Moodle");
   }
 
+  @Get("/register")
+  @Public
+  public void register() {
+    resultDefaults();
+  }
+
+  @Post("/register")
+  @Public
+  public void register(String firstName, String lastName, String userType, String email, String user, String password) {
+    dao.add(new User(user, password, firstName, lastName, email, userType));
+  }
+
 }
