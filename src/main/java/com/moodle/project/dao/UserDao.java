@@ -47,7 +47,7 @@ public interface UserDao {
   /**
    * Adds the user on database
    */
-  void add(User user);
+  Boolean add(User user);
 
   /**
    * Synchronize the user data with the database.

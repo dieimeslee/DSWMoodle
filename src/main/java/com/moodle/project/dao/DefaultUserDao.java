@@ -90,8 +90,8 @@ public class DefaultUserDao implements UserDao {
 	}
 	
 	@Override
-	public void add(User user) {
-		new com.moodle.project.http.endpoint.User().post(user.getLogin(), user.getPassword(), user.getEmail(), user.getFirstName(), user.getLastName(), user.getUserType());
+	public Boolean add(User user) {
+		return !new com.moodle.project.http.endpoint.User().post(user.getLogin(), user.getPassword(), user.getEmail(), user.getFirstName(), user.getLastName(), user.getUserType()).contains("ERROR");
 	}
 
 	@Override
