@@ -35,6 +35,13 @@ public class User implements Client {
     }
   }
 
+  public Boolean createTask(String name, String downloadLink, String description, String _class, String date) {
+    try {
+      return !client.task(name, downloadLink, description, _class, date, "{\"avoiding\": \"Error 411\"}").contains("ERROR");
+    } catch (Exception e){
+      return false;
+    }
+  }
   public String put(String user) {
     return client.update(user);
   }

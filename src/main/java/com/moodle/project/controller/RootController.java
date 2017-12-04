@@ -55,23 +55,15 @@ public class RootController{
   @Public
   public void login(String login, String password) {
     resultDefaults();
-    // search for the user in the database
-    final User currentUser = dao.find(login, password);
+    try {
+      final User currentUser = dao.find(login, password);
+      UserInfo.login(currentUser);
+      result.redirectTo(UsersController.class).index();
+    } catch (Exception e) {
+      result.include("message", "usuário ou senha incorretos");
+      result.redirectTo(RootController.class).index();
+    }
 
-    // if no user is found, adds an error message to the validator
-    // "invalid_login_or_password" is the message key from messages.properties,
-    // and that key is used with the fmt taglib in index.jsp, for example: <fmt:message key="error.key">
-//    validator.check(currentUser != null, new SimpleMessage("login", "invalid_login_or_password"));
-
-    // you can use "this" to redirect to another logic from this controller
-//    validator.onErrorUsePageOf(this).login(login, password);
-
-    // the login was valid, add user to session
-    UserInfo.login(currentUser);
-
-    // we don't want to go to default page (/WEB-INF/jsp/home/login.jsp)
-    // we want to redirect to the user's home
-    result.redirectTo(UsersController.class).index();
   }
 
   @Get("/recover")
@@ -114,7 +106,14 @@ public class RootController{
   @Post("/register")
   @Public
   public void register(String firstName, String lastName, String userType, String email, String user, String password) {
-    dao.add(new User(user, password, firstName, lastName, email, userType));
+      try {
+        if (dao.add(new User(user, password, firstName, lastName, email, userType)))
+          result.include("message", "Usuário " + user + " criado com sucesso!");
+        else
+          result.include("message", "Usuário " + user + " não pode ser criado!");
+      } catch (Exception e) {
+        result.include("message", "Usuário " + user + " não pode ser criado!");
+      }
   }
 
 }

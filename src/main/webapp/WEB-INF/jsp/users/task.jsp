@@ -7,17 +7,17 @@
         <div class="card card-register mx-auto mt-5">
             <div class="card-header">Cadastro de usuário</div>
             <div class="card-body">
-                <form action="${linkTo[RootController].register}" method="post" name="registration" id="registration">
+                <form action="${linkTo[UsersController].createTask}" method="post">
 
                     <div class="form-group">
                         <div class="form-row">
                             <div class="col-md-6">
-                                <label for="firstName">Nome</label>
-                                <input class="form-control" id="firstName" name="firstName" type="text" aria-describedby="nameHelp" placeholder="Insira seu nome" required>
+                                <label for="name">Nome</label>
+                                <input class="form-control" id="name" name="name" type="text" aria-describedby="nameHelp" placeholder="Insira o nome da tarefa" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="lastName">Sobrenome</label>
-                                <input class="form-control" id="lastName" name="lastName" type="text" aria-describedby="nameHelp" placeholder="Insira seu sobrenome" required>
+                                <label for="downloadLink">Descricao</label>
+                                <input class="form-control" id="description" name="description" type="text" aria-describedby="nameHelp" placeholder="Insira a descrição da tarefa" required>
                             </div>
                         </div>
                     </div>
@@ -25,17 +25,12 @@
                     <div class="form-group">
                         <div class="form-row">
                             <div class="col-md-6">
-                                <label for="userType">Tipo de usuário</label>
-                                <select class="form-control" id="userType" name="userType" required>
-                                    <option selected disabled value>--Selecione--</option>
-                                    <option value="aluno">Aluno</option>
-                                    <option value="professor">Professor</option>
-                                    <option value="admin">Admin</option>
-                                </select>
+                                <label for="downloadLink">Link de Download</label>
+                                <input class="form-control" id="downloadLink" name="downloadLink" type="text" aria-describedby="nameHelp" placeholder="Insira o link de download" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="email">Email</label>
-                                <input class="form-control" id="email" name="email" type="email" aria-describedby="emailHelp" placeholder="Insira seu email" required>
+                                <label for="class">Nome da Turma</label>
+                                <input class="form-control" id="class" name="_class" type="text" aria-describedby="emailHelp" placeholder="Insira o nome da Turma" required>
                             </div>
                         </div>
                     </div>
@@ -43,17 +38,13 @@
                     <div class="form-group">
                         <div class="form-row">
                             <div class="col-md-6">
-                                <label for="user">Usuário</label>
-                                <input class="form-control" id="user" type="user" name="user" placeholder="Insira o usuário" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="password">Senha</label>
-                                <input class="form-control" id="password" type="password" name="password" placeholder="Insira uma senha" required>
+                                <label for="date">Data</label>
+                                <input class="form-control" id="date" type="date" name="date" placeholder="Insira a data da entrega" required>
                             </div>
                         </div>
                         <div id="divPasswords"></div>
                     </div>
-                    <input type="submit" class="btn btn-success btn-block" id="cadastrar-btn" value="Cadastrar" >
+                    <input type="submit" class="btn btn-success btn-block" id="cadastrar-btn" value="Criar Tarefa" >
                 </form>
 
                 <h3>${message}</h3>

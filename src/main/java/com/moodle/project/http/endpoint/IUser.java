@@ -6,13 +6,23 @@ import feign.Param;
 import feign.RequestLine;
 
 public interface IUser {
-  @RequestLine("POST /user?user={user}&email={email}&firstName={firstName}&lastName={lastName}&userType={userType}")
+  @RequestLine("POST /user?user={user}&password={password}&email={email}&firstName={firstName}&lastName={lastName}&userType={userType}")
   @Headers("Content-Type: application/json")
-  String create(@Param("user") String user, @Param("password") String password,
+  String create(@Param("user") String user,
+                @Param("password") String password,
                 @Param("email") String email,
                 @Param("firstName") String firstName,
                 @Param("lastName") String lastName,
                 @Param("userType") String userType,
+                String requestBody);
+
+  @RequestLine("POST /task?name={name}&downloadLink={downloadLink}&description={description}&class={class}&date={date}")
+  @Headers("Content-Type: application/json")
+  String task(@Param("name") String name,
+                @Param("downloadLink") String downloadLink,
+                @Param("description") String description,
+                @Param("class") String _class,
+                @Param("date") String date,
                 String requestBody);
 
   @RequestLine("PUT /user?user={user}")

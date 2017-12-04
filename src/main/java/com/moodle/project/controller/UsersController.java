@@ -73,6 +73,25 @@ public class UsersController {
     result.include("users", userDao.listAll());
   }
 
+  @Get
+  public void task() {
+    resultDefaults();
+  }
+
+  @Post
+  public void createTask(String name, String downloadLink, String description, String _class, String date) {
+    resultDefaults();
+    com.moodle.project.http.endpoint.User user = new com.moodle.project.http.endpoint.User();
+    try {
+      if (user.createTask(name, downloadLink, description, _class, date))
+        result.include("Message", "Tarefa adicionada com sucesso");
+      else
+        result.include("Message", "Tarefa não foi adicionada com sucesso");
+    } catch (Exception e) {
+      result.include("Message", "Tarefa não foi adicionada com sucesso");
+    }
+  }
+
   /**
    * Accepts HTTP POST requests.
    *
