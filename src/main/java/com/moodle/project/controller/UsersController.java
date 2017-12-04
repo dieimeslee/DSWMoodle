@@ -90,6 +90,7 @@ public class UsersController {
     } catch (Exception e) {
       result.include("Message", "Tarefa não foi adicionada com sucesso");
     }
+    result.redirectTo(UsersController.class).task();
   }
 
   @Get
@@ -97,7 +98,7 @@ public class UsersController {
     resultDefaults();
   }
 
-  @Post
+  @Post("/setReminder")
   public void setReminder(String status) {
     resultDefaults();
     com.moodle.project.http.endpoint.User user = new com.moodle.project.http.endpoint.User();
@@ -109,6 +110,7 @@ public class UsersController {
     } catch (Exception e) {
       result.include("Message", "Lembrete não foi configurado com sucesso");
     }
+    result.redirectTo(UsersController.class).reminder();
   }
   /**
    * Accepts HTTP POST requests.
