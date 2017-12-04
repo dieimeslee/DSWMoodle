@@ -108,7 +108,7 @@ public class UsersController {
 
 
   private void resultDefaults() {
-    result.include("pageTitle", "Home Page");
+    result.include("pageTitle", "User");
     result.include("siteName", "Moodle");
     result.include("userName", UserInfo.getUser().getFirstName() + " " + UserInfo.getUser().getLastName());
   }
