@@ -7,7 +7,7 @@
   <div class="card card-register mx-auto mt-5">
     <div class="card-header">Cadastro de usuário</div>
     <div class="card-body">
-      <form action="https://1-dot-researchmanagement-178603.appspot.com/user" method="post" name="registration" id="registration">
+      <form action="https://researchmanagement-178603.appspot.com/user" method="post" name="registration" id="registration">
 
         <div class="form-group">
           <div class="form-row">

@@ -20,7 +20,7 @@
         <div class="card-header">Login</div>
         <div class="card-body">
 
-          <form action="https://1-dot-researchmanagement-178603.appspot.com/class" method="post" name="registration" id="registration">
+          <form action="https://researchmanagement-178603.appspot.com/class" method="post" name="registration" id="registration">
 
             <div class="form-group">
               <div class="form-row">

@@ -44,6 +44,13 @@ public class RootController{
     result.include("message", message);
   }
 
+  @Get("/logout")
+  @Public
+  public void logout() {
+    UserInfo.logout();
+    result.redirectTo(RootController.class).index();
+  }
+
   @Post
   @Public
   public void login(String login, String password) {
