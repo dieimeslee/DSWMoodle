@@ -23,7 +23,8 @@ import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 import com.moodle.project.http.endpoint.Login;
-import com.sun.org.apache.xpath.internal.operations.Bool;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Default implementation for UserDao
@@ -44,18 +45,24 @@ public class DefaultUserDao implements UserDao {
 
 	@Override
 	public User find(String login, String password) {
-		try {
-			String response =  new Login().post(login, password);
+			String response =  new Login().get(login, password);
 			User user = new User();
 			if (!response.contains("Error")) {
 				user.setLogin(login);
 				user.setPassword(password);
+				try {
+					JSONObject jsonObj = new JSONObject(response);
+					user.setFirstName(jsonObj.get("firstName").toString());
+					user.setLastName(jsonObj.get("lastName").toString());
+					user.setEmail(jsonObj.get("email").toString());
+					user.setUserType(jsonObj.get("role").toString());
+					user.setAuthToken(jsonObj.get("auth-token").toString());
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
 				return user;
 			} else
 				return null;
-		} catch (Exception e) {
-			return null;
-		}
 	}
 
 	@Override

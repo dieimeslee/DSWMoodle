@@ -36,7 +36,9 @@
 
                 <input type="submit" class="btn btn-success btn-block" id="cadastrar-btn" value="Recuperar" >
             </form>
-
+            <div class="text-center">
+                <a class="d-block small mt-3" href="${linkTo[RootController].index}">Voltar para página de login</a>
+            </div>
         </div>
     </div>
 </div>

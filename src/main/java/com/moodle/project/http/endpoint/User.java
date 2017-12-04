@@ -24,11 +24,15 @@ public class User implements Client {
   }
 
   public String post(String user, String password, String email, String firstName, String lastName, String userType) {
-    return client.create(user, password, email, firstName, lastName, userType);
+    return client.create(user, password, email, firstName, lastName, userType, "{\"avoiding\": \"Error 411\"}");
   }
 
   public Boolean put(String user, String password, String email) {
-    return !client.recover(user, password, email).contains("ERROR");
+    try{
+      return !client.recover(user, password, email).contains("ERROR");
+    } catch (Exception e) {
+      return false;
+    }
   }
 
   public String put(String user) {

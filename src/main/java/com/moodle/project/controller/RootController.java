@@ -60,7 +60,7 @@ public class RootController{
 //    validator.onErrorUsePageOf(this).login(login, password);
 
     // the login was valid, add user to session
-    userInfo.login(currentUser);
+    UserInfo.login(currentUser);
 
     // we don't want to go to default page (/WEB-INF/jsp/home/login.jsp)
     // we want to redirect to the user's home

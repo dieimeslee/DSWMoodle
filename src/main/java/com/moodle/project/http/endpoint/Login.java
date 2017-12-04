@@ -23,8 +23,8 @@ public class Login implements Client {
         .target(ILogin.class, api);
   }
 
-  public String post(String user, String password) {
-    return client.login(user, password);
+  public String get(String user, String password) {
+    return client.login(user, password, "{\"avoiding\": \"Error 411\"}");
   }
 
   public String put(String authToken) {

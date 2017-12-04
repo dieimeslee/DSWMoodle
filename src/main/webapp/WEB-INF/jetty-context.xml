@@ -7,4 +7,8 @@
       </Item>
     </Array>
   </Set>
+  <Call name="setAttribute">
+    <Arg>org.eclipse.jetty.server.Request.maxFormContentSize</Arg>
+    <Arg>2000000</Arg>
+  </Call>
 </Configure>

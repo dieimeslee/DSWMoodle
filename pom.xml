@@ -109,6 +109,11 @@
       <artifactId>hibernate-validator-cdi</artifactId>
       <version>5.0.1.Final</version>
     </dependency>
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20080701</version>
+    </dependency>
   </dependencies>
 
   <build>

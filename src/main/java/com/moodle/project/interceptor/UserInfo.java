@@ -11,17 +11,17 @@ import java.io.Serializable;
 public class UserInfo implements Serializable {
 
   private static final long serialVersionUID = 773496171272411714L;
-  private User user;
+  private static User user;
 
-  public User getUser() {
+  public static User getUser() {
     return user;
   }
 
-  public void login(User user) {
-    this.user = user;
+  public static void login(User newUser) {
+    user = newUser;
   }
 
-  public void logout() {
-    this.user = null;
+  public static void logout() {
+    user = null;
   }
 }

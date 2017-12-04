@@ -51,7 +51,7 @@ public class UsersController {
    * Accepts HTTP GET requests.
    *
    * URL:  /home
-   * View: /WEB-INF/jsp/user/home.jsp
+   * View: /WEB-INF/jsp/user/index.jsp
    *
    * Shows user's home page containing his Music collection.
    */
@@ -103,33 +103,14 @@ public class UsersController {
     // you can add objects to result even in redirects. Added objects will
     // survive one more request when redirecting.
     result.include("notice", "User " + user.getFirstName() + " successfully added");
-    result.redirectTo(RootController.class).login(userInfo.getUser().getLogin(), userInfo.getUser().getPassword());
+    result.redirectTo(RootController.class).login(UserInfo.getUser().getLogin(), UserInfo.getUser().getPassword());
   }
 
-  /**
-   * Accepts HTTP GET requests.
-   *
-   * URL:  /users/{login} (for example, /users/john
-   * shows information of the user with login john)
-   * View: /WEB-INF/jsp/user/view.jsp
-   *
-   * Shows information on the specified user.
-   * @param user
-   */
-  @Path("/users/{user.login}")
-  @Get
-  public void show(User user) {
-    resultDefaults();
-    result.include("user", userDao.find(user.getLogin()));
-
-    //You can redirect to any page if you like.
-    result.forwardTo("/WEB-INF/jsp/users/view.jsp");
-
-  }
 
   private void resultDefaults() {
-    result.include("pageTitle", "Login");
+    result.include("pageTitle", "Home Page");
     result.include("siteName", "Moodle");
+    result.include("userName", UserInfo.getUser().getFirstName() + " " + UserInfo.getUser().getLastName());
   }
 
 }
