@@ -13,16 +13,19 @@ import com.moodle.project.interceptor.UserInfo;
 import com.moodle.project.model.User;
 import org.apache.log4j.Logger;
 
+import java.lang.annotation.Annotation;
+
 @Controller
-public class RootController {
+public class RootController{
 
   final static Logger logger = Logger.getLogger(RootController.class);
-  private String message;
+
+
+
   private final Result result;
-//  private final Validator validator;
+  //  private final Validator validator;
   private final UserInfo userInfo;
   private final DefaultUserDao dao;
-
   /**
    * @deprecated CDI eyes only
    */
@@ -37,9 +40,14 @@ public class RootController {
     this.userInfo = userInfo;
   }
 
+  public void setMessage(String message) {
+    result.include("message", message);
+  }
+
   @Post
   @Public
   public void login(String login, String password) {
+    resultDefaults();
     // search for the user in the database
     final User currentUser = dao.find(login, password);
 
@@ -62,16 +70,18 @@ public class RootController {
   @Get("/recover")
   @Public
   public void recover() {
+    resultDefaults();
   }
 
   @Post("/recover")
   @Public
   public void recover(String user, String newPassword, String email) {
+    resultDefaults();
     if(dao.recover(user, newPassword, email)) {
-      message = "user password changed with success";
+      setMessage("User's password changed with success :-)");
       result.redirectTo(RootController.class).index();
     } else {
-      message = "Invalid info try again!";
+      setMessage("Invalid info try again!");
       result.redirectTo(RootController.class).recover();
 
     }
@@ -80,6 +90,12 @@ public class RootController {
   @Get("/")
   @Public
   public void index() {
-    result.include("mensagem", "Funciona");
+    resultDefaults();
   }
+
+  private void resultDefaults() {
+    result.include("pageTitle", "Login");
+    result.include("siteName", "Moodle");
+  }
+
 }

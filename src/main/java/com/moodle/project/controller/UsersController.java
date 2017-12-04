@@ -57,7 +57,7 @@ public class UsersController {
    */
   @Get
   @Public
-  public void index() {  }
+  public void index() {resultDefaults();  }
 
   /**
    * Accepts HTTP GET requests.
@@ -69,6 +69,7 @@ public class UsersController {
    */
   @Get("/users")
   public void list() {
+    resultDefaults();
     result.include("users", userDao.listAll());
   }
 
@@ -94,6 +95,7 @@ public class UsersController {
   @Post
   @Public
   public void add(@LoginAvailable User user) {
+    resultDefaults();
 //    validator.onErrorUsePageOf(RootController.class).login(userInfo.getUser().getLogin(), userInfo.getUser().getPassword());
 
     userDao.add(user);
@@ -117,11 +119,17 @@ public class UsersController {
   @Path("/users/{user.login}")
   @Get
   public void show(User user) {
+    resultDefaults();
     result.include("user", userDao.find(user.getLogin()));
 
     //You can redirect to any page if you like.
     result.forwardTo("/WEB-INF/jsp/users/view.jsp");
 
+  }
+
+  private void resultDefaults() {
+    result.include("pageTitle", "Login");
+    result.include("siteName", "Moodle");
   }
 
 }

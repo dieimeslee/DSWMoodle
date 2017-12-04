@@ -6,7 +6,7 @@
         <div class="card-body">
 
             <form action="${linkTo[RootController].login}" method="post">
-                <p>${message}</p>
+                <h2>${message}</h2>
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-12">
@@ -34,5 +34,4 @@
         </div>
     </div>
 </div>
-<script src="../js/login.js"></script>
 <jsp:include page="/WEB-INF/jsp/footer.jsp"></jsp:include>
