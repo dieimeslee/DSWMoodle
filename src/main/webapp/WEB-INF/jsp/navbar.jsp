@@ -61,7 +61,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="${linkTo[UsersController].showTasks}">
                                     <i class="fa fa-pencil"></i>
                                     <span class="nav-link-text">
                                         Avaliar Tarefa
@@ -87,7 +87,7 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseMulti">
                     <li>
-                        <a href="#collapseMulti">
+                        <a href="${linkTo[UsersController].showTasks}">
                             <i class="fa fa-tasks"></i>
                             <span class="nav-link-text">Tarefas</span>
                         </a>

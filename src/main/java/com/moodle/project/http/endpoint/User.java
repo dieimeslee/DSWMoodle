@@ -44,6 +44,14 @@ public class User implements Client {
     }
   }
 
+
+  public String getTask() {
+    try {
+      return client.getTasks();
+    } catch (Exception e){
+      return "";
+    }
+  }
   public Boolean setReminder(String status) {
     try {
       return !client.setReminder(UserInfo.getUser().getLogin() , status, "{\"avoiding\": \"Error 411\"}").contains("ERROR");

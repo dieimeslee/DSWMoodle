@@ -25,6 +25,9 @@ public interface IUser {
                 @Param("date") String date,
                 String requestBody);
 
+  @RequestLine("GET /task")
+  String getTasks();
+
   @RequestLine("POST /reminder?user={user}&status={status}")
   @Headers("Content-Length: 0")
   String setReminder(@Param("user") String user,

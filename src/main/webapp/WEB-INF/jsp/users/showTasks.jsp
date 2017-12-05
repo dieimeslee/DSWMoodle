@@ -5,25 +5,9 @@
 <div class="content-wrapper">
     <div class="container">
         <div class="card card-register mx-auto mt-5">
-            <div class="card-header">Definir Lembrete</div>
+            <div class="card-header">Tarefas</div>
             <div class="card-body">
-                <form action="${linkTo[UsersController].setReminder}" method="post">
-
-                    <div class="form-group">
-                        <div class="form-row">
-                            <div class="col-md-6">
-                                <label for="status">Permitir criação de lembrete</label>
-                                <select class="form-control" id="status" name="status" required>
-                                    <option selected disabled value>--Selecione--</option>
-                                    <option value="1">Sim</option>
-                                    <option value="0">Não</option>
-                                </select>
-                        </div>
-                    </div>
-
-
-                    <input type="submit" class="btn btn-success btn-block" id="cadastrar-btn" value="Salvar Alterações" >
-                </form>
+                ${table}
 
                 <h3>${message}</h3>
                 <div class="text-center">

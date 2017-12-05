@@ -5,7 +5,7 @@
 <div class="content-wrapper">
     <div class="container">
         <div class="card card-register mx-auto mt-5">
-            <div class="card-header">Cadastro de usuário</div>
+            <div class="card-header">Cadastro de tarefa</div>
             <div class="card-body">
                 <form action="${linkTo[UsersController].createTask}" method="post">
 

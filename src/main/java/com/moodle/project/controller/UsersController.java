@@ -8,6 +8,7 @@ import com.moodle.project.interceptor.UserInfo;
 import com.moodle.project.model.User;
 import com.moodle.project.validation.LoginAvailable;
 import jdk.jfr.events.ExceptionThrownEvent;
+import org.json.JSONObject;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
@@ -97,6 +98,41 @@ public class UsersController {
       result.include("message", "Tarefa não foi adicionada com sucesso");
     }
     result.redirectTo(UsersController.class).task();
+  }
+
+
+  private String addHtmlElement(String element) {
+    return "<td>" + element + "</td>";
+  }
+
+  @Get
+  public void showTasks() {
+    resultDefaults();
+
+    try {
+      com.moodle.project.http.endpoint.User user = new com.moodle.project.http.endpoint.User();
+      try {
+        String _result = user.getTask(), htmlStr = "<table><tr><th>Tarefa</th><th>Turma</th><th>Descricao</th><th>Link</th><th>Data</th></tr>";
+        String[] splittedResult = _result.split("|");
+
+        for (int i = 0; i < splittedResult.length; i ++){
+          htmlStr += "<tr>";
+          JSONObject json = new JSONObject(splittedResult[i]);
+          htmlStr += addHtmlElement(json.getString("name"));
+          htmlStr += addHtmlElement(json.getString("class"));
+          htmlStr += addHtmlElement(json.getString("description"));
+          htmlStr += addHtmlElement(json.getString("downloadLink"));
+          htmlStr += addHtmlElement(json.getString("date"));
+        }
+        htmlStr += "</table>";
+        result.include("table", htmlStr);
+      } catch (Exception e) {
+        result.include("message", "Tarefas não puderam ser carregadas");
+      }
+    }
+    catch (Exception e) {
+      result.include("message", "Tarefa não foi adicionada com sucesso");
+    }
   }
 
   @Get
