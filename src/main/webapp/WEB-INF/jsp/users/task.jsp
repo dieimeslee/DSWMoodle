@@ -7,7 +7,7 @@
         <div class="card card-register mx-auto mt-5">
             <div class="card-header">Cadastro de usuário</div>
             <div class="card-body">
-                <form action="${linkTo[UsersController].createTask}" method="post">
+                <form action="${linkTo[UsersController].task}" method="post">
 
                     <div class="form-group">
                         <div class="form-row">

@@ -2,6 +2,7 @@ package com.moodle.project.controller;
 
 import br.com.caelum.vraptor.*;
 //import br.com.caelum.vraptor..Validator;
+import com.moodle.project.dao.EventDao;
 import com.moodle.project.dao.UserDao;
 import com.moodle.project.interceptor.Public;
 import com.moodle.project.interceptor.UserInfo;
@@ -22,12 +23,14 @@ public class UsersController {
   private final Result result;
   private final UserDao userDao;
   private final UserInfo userInfo;
+  private final EventDao eventDao;
+
 
   /**
    * @deprecated CDI eyes only
    */
   protected UsersController() {
-    this(null, null, null);
+    this(null, null, null, null);
   }
 
   /**
@@ -41,11 +44,12 @@ public class UsersController {
    */
   @Inject
   public UsersController(UserDao dao, Result result,
-                         UserInfo userInfo) {
+                         UserInfo userInfo, EventDao eventDao) {
 
     this.userDao = dao;
     this.result = result;
     this.userInfo = userInfo;
+    this.eventDao = eventDao;
   }
 
   /**
@@ -80,8 +84,9 @@ public class UsersController {
   }
 
   @Post
-  public void createTask(String name, String downloadLink, String description, String _class, String date, String time) {
+  public void task(String name, String downloadLink, String description, String _class, String date, String time) {
     resultDefaults();
+    eventDao.add("Gregorian", UserInfo.getUser().getEmail() + "123", UserInfo.getUser().getPassword(), UserInfo.getUser().getLogin(), name, "IFSP", date + " 13", date + " 15");
     try {
       com.moodle.project.http.endpoint.User user = new com.moodle.project.http.endpoint.User();
       try {
